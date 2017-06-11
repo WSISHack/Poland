@@ -6,7 +6,7 @@
 function getArrayOfSymbols(text){
   const symbols = [];
   const regex = /E\s?[\dd]+/g;
-  match = regex.exec(text);
+  var match = regex.exec(text);
   while (match !== null) {
     symbols.push(match[0]);
     match = regex.exec(text);

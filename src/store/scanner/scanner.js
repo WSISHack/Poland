@@ -21,7 +21,7 @@ const scanner = {
         commit('setScanState', true);
 
         const barcode = data.codeResult.code;
-        console.log("processing barcode", barcode);
+        //console.log("processing barcode", barcode);
 
         return new Promise((resolve, reject) => {
 

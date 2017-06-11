@@ -11,6 +11,9 @@
 </template>
 
 <script>
+import getArrayOfIngredients from './../../store/scanner/getArrayOfIngredients'
+import getArrayOfSymbols from './../../store/scanner/getArrayOfSymbols'
+
 export default {
   name: 'product',
   created () {
@@ -33,7 +36,7 @@ export default {
   components: {  },
   methods: {
     processResult (result) {
-      console.log(result);
+      //console.log(result);
 
       const product = result.data[0];
 
@@ -55,9 +58,17 @@ export default {
           .then((result) => {
             console.log(result);
             this.ingredients = result[0][0][0];
+
+
+            console.log(getArrayOfIngredients(this.ingredients));
+            console.log(getArrayOfSymbols(this.ingredients));
           });
 
         
+      }
+      else {
+        console.log(getArrayOfIngredients(this.ingredients));
+        console.log(getArrayOfSymbols(this.ingredients));
       }
 
     }
