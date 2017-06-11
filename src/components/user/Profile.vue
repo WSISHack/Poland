@@ -57,12 +57,12 @@
         </md-layout>
       </md-layout>
       
+      <!--Diseases-->
       <div class="md-theme-default label">
         <label>Diseases</label>
       </div>
-
       <div class="md-chips md-theme-default mychips" md-delete="">
-        <div class="md-input-container md-theme-default">
+        <div class="md-input-container md-theme-default auto-height">
           <div v-for="(disease, id) in user.diseases" @click="removeDisease(disease)" tabindex="0" class="md-chip md-theme-default md-deletable">
             {{ disease }}
             <button type="button" class="md-button md-icon-button md-dense md-delete md-theme-default" tabindex="-1">
@@ -74,11 +74,36 @@
           </div>
         </div>
       </div>
-
       <div style="max-height: 130px; min-height: 64px; overflow-y: scroll;">
         <md-list>
           <md-list-item v-for="(disease, id) in getDiseases()" :key="id" @click.native="addDisease(disease)">
             <span>{{ disease }}</span>
+            <md-ink-ripple />
+          </md-list-item>
+        </md-list>
+      </div>
+
+      <!--Allergens-->
+      <div class="md-theme-default label">
+        <label>Allergens</label>
+      </div>
+      <div class="md-chips md-theme-default mychips" md-delete="">
+        <div class="md-input-container md-theme-default auto-height">
+          <div v-for="(allergen, id) in user.allergens" @click="removeAllergen(allergen)" tabindex="0" class="md-chip md-theme-default md-deletable">
+            {{ allergen }}
+            <button type="button" class="md-button md-icon-button md-dense md-delete md-theme-default" tabindex="-1">
+              <i aria-hidden="true" class="md-icon md-icon-delete md-theme-default material-icons">cancel</i>
+              <div class="md-ink-ripple">
+                <div class="md-ripple" style="width: 24px; height: 24px;" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div style="max-height: 130px; min-height: 64px; overflow-y: scroll;">
+        <md-list>
+          <md-list-item v-for="(allergen, id) in getAllergens()" :key="id" @click.native="addAllergen(allergen)">
+            <span>{{ allergen }}</span>
             <md-ink-ripple />
           </md-list-item>
         </md-list>
@@ -119,6 +144,15 @@ export default {
     },
     getDiseases() {
       return this.$store.getters['user/profile/diseases'];
+    },
+    addAllergen(value) {
+      this.$store.dispatch('user/profile/addAllergen', value);
+    },
+    removeAllergen(value) {
+      this.$store.dispatch('user/profile/removeAllergen', value);
+    },
+    getAllergens() {
+      return this.$store.getters['user/profile/allergens'];
     }
   }
 }
@@ -147,6 +181,10 @@ export default {
     color: rgba(0,0,0,.54);
     font-family: inherit;
     font-size: 16px;
+  }
+  .auto-height {
+    min-height: 0px;
+    margin: 0;
   }
 
 </style>
