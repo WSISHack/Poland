@@ -17,7 +17,7 @@
               <span><b>Ingredients</b></span>
               <md-list-expand true>
                 <md-list>
-                  <md-list-item v-if="ingredients" class="md-inset" v-for="ingredient in ingredients"><p style="font-size:14px">{{ingredient}}</p> 
+                  <md-list-item v-if="ingredients" class="md-inset" v-for="(ingredient, id) in ingredients" :key="id"><p style="font-size:14px">{{ingredient}}</p> 
                     
                         <md-icon v-if="badIngredients.indexOf(ingredient) >= 0 " style="color:red">priority_high</md-icon>
                         <md-icon v-if="goodIngredients.indexOf(ingredient)  >= 0 " style="color:green">spa</md-icon>
