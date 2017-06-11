@@ -5,20 +5,27 @@ import VueRouter from 'vue-router'
 import store from './store/store'
 
 import Login from './components/login/Login'
+import Home from './components/home/Home'
 
 Vue.use(VueRouter)
 
 const routes = [
     { 
         path: '', 
-        redirect: '/login'
+        redirect: '/home'
     },
     { 
         path: '/login', 
         component: Login,
         meta: { fullscreen: true },
         name: 'login_page'
-    }
+    },
+    { 
+        path: '/home', 
+        component: Home, 
+        meta: { requiresAuth: true },
+        name: 'home'
+    },
 ]
 
 const router = new VueRouter({

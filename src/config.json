@@ -2,7 +2,7 @@
     "bottomBar": {
         "items": [
             {
-                "text": "Test Page",
+                "text": "Home",
                 "icon": "shopping_cart",
                 "pathName": "home"
             },
