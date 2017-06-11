@@ -4,6 +4,9 @@
       <p style="text-align:center;">
         <span class="md-title">{{ productName }}</span>
       </p>
+      <p style="color:red">
+        <center><b><md-icon>warning</md-icon>Warning! Your are pregnant car!</b></center>
+      </p>
       <p>
         <!--{{ ingredients }}-->
 
@@ -11,10 +14,10 @@
           <md-list>
             <md-list-item ref="menu">
               <md-icon>pie_chart</md-icon>
-              <span>Ingredients</span>
+              <span><b>Ingredients</b></span>
               <md-list-expand true>
                 <md-list>
-                  <md-list-item class="md-inset" v-for="ingredient in ingredients">{{ingredient}} 
+                  <md-list-item class="md-inset" v-for="ingredient in ingredients"><p style="font-size:14px">{{ingredient}}</p> 
                     
                         <md-icon v-if="badIngredients.indexOf(ingredient) >= 0 " style="color:red">priority_high</md-icon>
                         <md-icon v-if="goodIngredients.indexOf(ingredient)  >= 0 " style="color:green">spa</md-icon>
@@ -26,7 +29,7 @@
 
             <md-list-item>
               <md-icon>whatshot</md-icon>
-              <span>Nutritional values</span>
+              <span><b>Nutritional values</b></span>
 
               <md-list-expand>
                 <md-list>
@@ -118,7 +121,7 @@
 
             <md-list-item>
               <md-icon>shopping_basket</md-icon>
-              <span>Recommend</span>
+              <span><b>Recommend</b></span>
 
               <md-list-expand>
                 <md-list>
@@ -142,7 +145,7 @@ export default {
   name: 'product',
   created () {
     this.$store.commit('setTitle', 'Product');
-    this.$store.dispatch('scanner/getProducts', [ 7611654884033 ])//90162909 ])//this.$route.params.barcode ])
+    this.$store.dispatch('scanner/getProducts', [ this.$route.params.barcode ])
       .then(this.processResult);
 
 
