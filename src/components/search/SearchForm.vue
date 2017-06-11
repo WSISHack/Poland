@@ -3,7 +3,7 @@
     <md-whiteframe class="search-form-frame">
         <md-input-container>
             <label>Search by barcode or name</label>
-            <md-input v-model="initialValue"></md-input>
+            <md-input></md-input>
             <md-icon>search</md-icon>
         </md-input-container>
     </md-whiteframe>

@@ -1,7 +1,12 @@
 
 <template>
   <div>
-    Product page
+      <p>
+        <span class="md-title">{{ productName }}</span>
+      </p>
+      <p>
+        Skład
+      </p>
   </div>
 </template>
 
@@ -11,9 +16,11 @@ export default {
   created () {
     this.$store.commit('setTitle', 'Product');
     console.log(this.$route);
+
   },
   data () {
     return {
+      productName: "Product name"
     }
   },
   components: {  }
