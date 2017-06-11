@@ -1,27 +1,15 @@
-  import $ from "jquery"
-  import keys from "../keys"
+import axios from 'axios';
+import keys from '../keys';
 
-function getWeatherByCoordinates(lat, lon) {
-  $.get( "http://api.openweathermap.org/data/2.5/weather", 
-    { 
-      lat: lat, 
-      lon: lon, 
-      units: "metric", 
-      appid: keys.openweathermapKey
-    }).done(function( n ) {
-      console.log(n);
-  });
+export async function getWeatherByCoordinates(lat, lon) {
+  const URL = 'http://api.openweathermap.org/data/2.5/weather';
+  const q = `appid=${keys.openweathermapKey}&lat=${lat}&lon=${lon}&units=metric`;
+  const res = await axios.get(`${URL}?${q}`);
+  return res.data;
 }
 
-function getPollutionByCoordinates(lat, lon) {
-  $.get( `https://api.waqi.info/feed/geo:${lat};${lon}/`, 
-    { 
-      token: keys.aqicnKey
-    }).done(function( n ) {
-      console.log(n);
-  });
+export async function getAirQualityIndexByCoordinates(lat, lon) {
+  const URL = `https://api.waqi.info/feed`;
+  const res = await axios.get(`${URL}/geo:${lat};${lon}/?token=${keys.aqicnKey}`);
+  return res.data.data;
 }
-
-
-export default getWeatherByCoordinates;
-export default getPollutionByCoordinates;
