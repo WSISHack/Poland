@@ -18,9 +18,14 @@ const scanner = {
         const barcode = data.codeResult.code;
         console.log("processing barcode", barcode);
 
-        setTimeout(() => {
+        return new Promise((resolve, reject) => {
+
+          setTimeout(() => {
             commit('setScanState', false);
-        }, 2000)
+          }, 2000)
+
+          resolve(barcode);
+        });
     }
   },
 
