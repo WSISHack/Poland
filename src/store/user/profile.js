@@ -33,21 +33,23 @@ const profile = {
         name: null,
         surname: null,
         age: null,
-        sex: null,
+        sex: 0,
         growth: null,
         weight: null,
         address: null,
         city: null,
         state: null,
         zipCode: null,
+        lifestyle: null,
         diseases: [],
-        allergens: []
+        allergens: [],
       }
   },
 
   mutations: {
     save (state, value) {
       state.user = value;
+      console.log(value);
     },
     addDisease (state, value) {
       let id = state.diseases.indexOf(value);
