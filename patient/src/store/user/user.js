@@ -26,7 +26,18 @@ const user = {
             state.current = firebase.auth().currentUser;
 
             firebase.database().ref('/users/' + state.current.uid + "/profile").once('value').then(function(snapshot) {
-              state.profile.user = snapshot.val();
+              const val = snapshot.val();
+
+              console.log(val);
+              for(let i=0; i < val.diseases.length; i++) {
+                commit("profile/addDisease", val.diseases[i]);
+              }
+
+              for(let i=0; i < val.allergens.length; i++) {
+                commit("profile/addAllergen", val.allergens[i]);
+              }
+              
+              state.profile.user = val;
             });
             
             resolve(true);
