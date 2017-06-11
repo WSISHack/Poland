@@ -20,16 +20,15 @@ const user = {
           return resolve(true);
         }
 
-       
-          firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-              state.current = firebase.auth().currentUser;
-              
-              resolve(true);
-            } else {
-              resolve(false);
-            }
-          });
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            state.current = firebase.auth().currentUser;
+            
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        });
       });
     },
 
