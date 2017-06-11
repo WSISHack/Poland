@@ -1,6 +1,8 @@
 import jquery from 'jquery'
 import $ from 'jquery'
 
+import keys from './../../keys.json'
+
 const scanner = {
   namespaced: true,
 
@@ -19,7 +21,7 @@ const scanner = {
         commit('setScanState', true);
 
         const barcode = data.codeResult.code;
-        console.log("processing barcode", barcode);
+        //console.log("processing barcode", barcode);
 
         return new Promise((resolve, reject) => {
 
@@ -43,7 +45,7 @@ const scanner = {
       );
     },
 
-    getProductById(id) {
+    getProductById({ commit, state }, id) {
       return $.ajax({
         method: "GET",
         url: "https://www.openfood.ch/api/v3/products/" +id,
@@ -54,7 +56,7 @@ const scanner = {
       });
     },
 
-    getProducts(barcodesArray) {
+    getProducts({ commit, state }, barcodesArray) {
       return $.ajax({
         method: "GET",
         url: "https://www.openfood.ch/api/v3/products?barcodes="+barcodesArray.join(","),
@@ -65,7 +67,7 @@ const scanner = {
       });
     },
 
-    search(query) {
+    search({ commit, state }, query) {
       return $.ajax({
         method: "POST",
         url: "https://www.openfood.ch/api/v3/products/_search",
