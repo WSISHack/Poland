@@ -18,6 +18,11 @@
       </md-input-container>
 
       <md-input-container>
+        <label>Sex</label>
+        <md-input v-model="user.sex"></md-input>
+      </md-input-container>
+
+      <md-input-container>
         <label>Growth</label>
         <md-input v-model="user.growth"></md-input>
       </md-input-container>
@@ -51,6 +56,33 @@
           </md-input-container>
         </md-layout>
       </md-layout>
+      
+      <div class="md-theme-default label">
+        <label>Diseases</label>
+      </div>
+
+      <div class="md-chips md-theme-default mychips" md-delete="">
+        <div class="md-input-container md-theme-default">
+          <div v-for="(disease, id) in user.diseases" @click="removeDisease(disease)" tabindex="0" class="md-chip md-theme-default md-deletable">
+            {{ disease }}
+            <button type="button" class="md-button md-icon-button md-dense md-delete md-theme-default" tabindex="-1">
+              <i aria-hidden="true" class="md-icon md-icon-delete md-theme-default material-icons">cancel</i>
+              <div class="md-ink-ripple">
+                <div class="md-ripple" style="width: 24px; height: 24px;" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-height: 130px; min-height: 64px; overflow-y: scroll;">
+        <md-list>
+          <md-list-item v-for="(disease, id) in getDiseases()" :key="id" @click.native="addDisease(disease)">
+            <span>{{ disease }}</span>
+            <md-ink-ripple />
+          </md-list-item>
+        </md-list>
+      </div>
 
       <md-layout md-align="end">
         <md-button class="md-raised md-primary left" @click.native="save">Save</md-button>
@@ -66,7 +98,8 @@ export default {
     this.$store.commit('setTitle', 'Your profile');
   },
   data() {
-    return {}
+    return {
+    }
   },
   computed: {
     user() {
@@ -77,6 +110,15 @@ export default {
   methods : {
     save() {
       this.$store.dispatch('user/profile/save', this.user);
+    },
+    addDisease(value) {
+      this.$store.dispatch('user/profile/addDisease', value);
+    },
+    removeDisease(value) {
+      this.$store.dispatch('user/profile/removeDisease', value);
+    },
+    getDiseases() {
+      return this.$store.getters['user/profile/diseases'];
     }
   }
 }
@@ -93,4 +135,18 @@ export default {
   .left {
     margin-left: 0px;
   }
+  .label {
+    width: 100%;
+    min-height: 48px;
+    padding-top: 16px;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    border: none;
+    background: none;
+    color: rgba(0,0,0,.54);
+    font-family: inherit;
+    font-size: 16px;
+  }
+
 </style>
