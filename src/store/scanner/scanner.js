@@ -12,14 +12,13 @@ const scanner = {
   },
 
   actions: { 
-    process ({ commit, state }, barcode) {
+    process ({ commit, state }, data) {
         commit('setScanState', true);
 
+        const barcode = data.codeResult.code;
         console.log("processing barcode", barcode);
 
         setTimeout(() => {
-            console.log("barcode processed", barcode);
-
             commit('setScanState', false);
         }, 2000)
     }

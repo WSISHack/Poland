@@ -6,6 +6,8 @@ import store from './store/store'
 
 import Login from './components/login/Login'
 import Home from './components/home/Home'
+import SearchPage from './components/search/SearchPage'
+import Product from './components/product/Product'
 
 Vue.use(VueRouter)
 
@@ -25,6 +27,18 @@ const routes = [
         component: Home, 
         meta: { requiresAuth: true },
         name: 'home'
+    },
+    { 
+        path: '/scanner', 
+        component: SearchPage, 
+        meta: { requiresAuth: true },
+        name: 'scanner'
+    },
+    { 
+        path: '/product', 
+        component: Product, 
+        meta: { requiresAuth: true },
+        name: 'product'
     },
 ]
 
