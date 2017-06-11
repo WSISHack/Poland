@@ -1,8 +1,6 @@
-import axios from 'axios';
-import keys from '../keys';
-
-function proteinForDay(age, mass) {
-  range = {
+export function proteinForDay(age, mass) {
+  console.log(mass);
+  var range = {
     B_low: 0,
     B_high: 0
   }
