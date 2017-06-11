@@ -18,12 +18,12 @@
       </md-input-container>
 
       <md-input-container>
-        <label>Height</label>
+        <label>Height (cm)</label>
         <md-input v-model="user.height"></md-input>
       </md-input-container>
 
       <md-input-container>
-        <label>Weight</label>
+        <label>Weight (kg)</label>
         <md-input v-model="user.weight"></md-input>
       </md-input-container>
 
@@ -177,9 +177,6 @@ export default {
     getAllergens() {
       return this.$store.getters['user/profile/allergens'];
     },
-    mouseOver() {
-      console.log("DUPA")
-    }
   }
 }
 </script>
