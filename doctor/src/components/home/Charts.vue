@@ -1,16 +1,36 @@
 <template>
-  <md-card class="container">
-    <md-card-content
-      <div class="charts">
-        <line-chart :height="300" :chartData="chartData"></line-chart>
-      </div>
-      <div class="buttons">
-        <md-button class="md-raised md-primary" @click.native="setChart('macros')">MACROS</md-button>
-        <md-button class="md-raised md-accent" @click.native="setChart('measurement')">Measurement</md-button>
-        <md-button class="md-raised md-warn" @click.native="setChart('air')">Air</md-button>
-      </div>
-    </md-card-content>
-  </md-card>
+  <div class="container">
+    <md-card class="chart">
+      <md-card-header>
+        <md-card-header-text>
+          <div class="md-title">Macros</div>
+        </md-card-header-text>
+      </md-card-header>
+      <md-card-content
+        <line-chart :height="300" :chartData="chartData.macros"></line-chart>
+      </md-card-content>
+    </md-card>
+    <md-card class="chart">
+      <md-card-header>
+        <md-card-header-text>
+          <div class="md-title">Measurement</div>
+        </md-card-header-text>
+      </md-card-header>
+      <md-card-content
+        <line-chart :height="300" :chartData="chartData.measurement"></line-chart>
+      </md-card-content>
+    </md-card>
+    <md-card class="chart">
+      <md-card-header>
+        <md-card-header-text>
+          <div class="md-title">Air</div>
+        </md-card-header-text>
+      </md-card-header>
+      <md-card-content
+        <line-chart :height="300" :chartData="chartData.air"></line-chart>
+      </md-card-content>
+    </md-card>
+  </div>
 </template>
 
 <script>
@@ -77,7 +97,11 @@
     },
     data () {
       return {
-        chartData: data.macros
+        chartData: {
+          macros: data.macros,
+          measurement: data.measurement,
+          air: data.air
+        }
       }
     },
     methods: {
@@ -90,15 +114,11 @@
 
 <style scoped>
   .container {
-    margin: 10px;
+    display: flex;
+    margin: 20px;
   }
-
-  .charts {
+  .chart {
     max-width: 600px;
-    margin:  10px;
-  }
-
-  .buttons {
-    text-align: center;
+    padding: 20px;
   }
 </style>
