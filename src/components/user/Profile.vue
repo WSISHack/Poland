@@ -37,6 +37,7 @@
         <md-input v-model="user.city"></md-input>
       </md-input-container>
 
+      <!--State & Zip code-->
       <md-layout md-gutter>
         <md-layout class="inline">
           <md-input-container>
@@ -52,6 +53,19 @@
         </md-layout>
       </md-layout>
       
+      <!--Lifestyle-->
+      <md-input-container>
+        <label for="lifestyle">Lifestyle</label>
+        <md-select name="lifestyle" id="lifestyle" v-model="user.lifestyle">
+          <md-option value="1.0">Lying or sedentary lifestyle, lack of physical activity</md-option>
+          <md-option value="1.2">Sedentary work, low level physical activity</md-option>
+          <md-option value="1.4">Work not physical, workout 2 times a week</md-option>
+          <md-option value="1.6">Light physical work, training 3-4 times a week</md-option>
+          <md-option value="1.8">Physical workout, training 5 times a week</md-option>
+          <md-option value="2">Hard physical work, daily workout</md-option>
+        </md-select>
+      </md-input-container>
+
       <!--Diseases-->
       <div class="md-theme-default label">
         <label>Diseases</label>
@@ -104,13 +118,18 @@
         </md-list>
       </div>
 
-
+      <!--Sex-->
       <md-list>
         <label class="label">Sex</label>
-        <md-radio v-model="user.sex" id="my-test2" name="my-test-group1" md-value="2">Female</md-radio>
-        <md-radio v-model="user.sex" id="my-test3" name="my-test-group1" md-value="3">Male</md-radio>
+        <md-radio v-model="user.sex" id="my-test2" name="my-test-group1" md-value="2" class="md-primary">
+          Female
+        </md-radio>
+        <md-radio v-model="user.sex" id="my-test3" name="my-test-group1" md-value="3"class="md-primary">
+          Male
+        </md-radio>
       </md-list>
 
+      <!--Save button-->
       <md-layout md-align="end">
         <md-button class="md-raised md-primary left" @click.native="save">Save</md-button>
       </md-layout>
