@@ -6,6 +6,7 @@ import store from './store/store'
 
 import Login from './components/login/Login'
 import Home from './components/home/Home'
+import OpenFoodApi from './components/OpenFoodApi/OpenFoodApi'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,11 @@ const routes = [
         component: Home, 
         meta: { requiresAuth: true },
         name: 'home'
+    },
+    { 
+        path: '/openfood', 
+        component: OpenFoodApi,
+        name: 'openfood'
     },
 ]
 
