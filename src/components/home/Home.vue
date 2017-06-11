@@ -13,7 +13,7 @@ import AirInfo from './AirInfo';
 export default {
   name: 'home',
   created () {
-    this.$store.commit('setTitle', 'Home')
+    this.$store.commit('setTitle', 'Dashboard')
   },
   data () {
     return {
