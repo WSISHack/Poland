@@ -6,7 +6,7 @@
           <md-icon>menu</md-icon>
         </md-button>-->
          <md-avatar class="md-small">
-            <img src="../assets/fabian.jpg">
+            <img src="../assets/doctor.jpg">
           </md-avatar>
 
         <h2 class="md-title toolbar-title" style="flex: 1">{{ $store.state.title }}</h2>
