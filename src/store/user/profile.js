@@ -19,7 +19,7 @@ const profile = {
         "Atherosclerosis",
         "Cirrhosis"
       ],
-      alergens: [
+      allergens: [
         "Eggs",
         "Milk",
         "Peanuts",
@@ -40,7 +40,8 @@ const profile = {
         city: null,
         state: null,
         zipCode: null,
-        diseases: []
+        diseases: [],
+        allergens: []
       }
   },
 
@@ -57,6 +58,16 @@ const profile = {
       let id = state.user.diseases.indexOf(value);
       state.user.diseases.splice(id, 1);
       state.diseases.push(value);
+    },
+    addAllergen (state, value) {
+      let id = state.allergens.indexOf(value);
+      state.allergens.splice(id, 1);
+      state.user.allergens.push(value);
+    },
+    removeAllergen (state, value) {
+      let id = state.user.allergens.indexOf(value);
+      state.user.allergens.splice(id, 1);
+      state.allergens.push(value);
     }
   },
 
@@ -69,6 +80,12 @@ const profile = {
     },
     removeDisease ({commit, state}, value) {
       commit('removeDisease', value);
+    },
+    addAllergen ({commit, state}, value) {
+      commit('addAllergen', value);
+    },
+    removeAllergen ({commit, state}, value) {
+      commit('removeAllergen', value);
     }
   },
 
@@ -79,8 +96,8 @@ const profile = {
     diseases: (state, getters) => {
       return state.diseases;
     },
-    alergens: (state, getters) => {
-      return state.alergens;
+    allergens: (state, getters) => {
+      return state.allergens;
     }
   }
 }
