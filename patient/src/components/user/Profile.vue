@@ -57,10 +57,10 @@
       <md-input-container>
         <label for="lifestyle">Lifestyle</label>
         <md-select name="lifestyle" id="lifestyle" v-model="user.lifestyle">
-          <md-option value="1.0">Lying or sedentary lifestyle, lack of physical activity</md-option>
+          <md-option value="1.0">Lying or sedentary lifestyle, lack of physi...</md-option>
           <md-option value="1.2">Sedentary work, low level physical activity</md-option>
           <md-option value="1.4">Work not physical, workout 2 times a week</md-option>
-          <md-option value="1.6">Light physical work, training 3-4 times a week</md-option>
+          <md-option value="1.6">Light physical work, training 3-4 times a...</md-option>
           <md-option value="1.8">Physical workout, training 5 times a week</md-option>
           <md-option value="2">Hard physical work, daily workout</md-option>
         </md-select>
@@ -109,7 +109,7 @@
           </div>
         </div>
       </div>
-      <div style="max-height: 130px; min-height: 64px; overflow-y: scroll;">
+      <div style="max-height: 130px; min-height: 64px; overflow-y: scroll; left: 0px;">
         <md-list>
           <md-list-item v-for="(allergen, id) in getAllergens()" :key="id" @click.native="addAllergen(allergen)">
             <span>{{ allergen }}</span>
@@ -174,6 +174,9 @@ export default {
     },
     getAllergens() {
       return this.$store.getters['user/profile/allergens'];
+    },
+    mouseOver() {
+      console.log("DUPA")
     }
   }
 }
@@ -206,6 +209,9 @@ export default {
   .auto-height {
     min-height: 0px;
     margin: 0;
+  }
+  body > div.md-menu-content.md-select-content.md-theme-default.md-size-0.md-direction-bottom-right.md-active {
+    left: 0px !important;
   }
 
 </style>
