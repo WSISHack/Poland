@@ -5,9 +5,11 @@
         <!--<md-button class="md-icon-button" @click.native="toggleLeftSidenav" v-if="$store.state.sidenavEnabled">
           <md-icon>menu</md-icon>
         </md-button>-->
-         <md-avatar class="md-small">
+        <router-link to="/profile">
+          <md-avatar class="md-small">
             <img src="../assets/fabian.jpg">
           </md-avatar>
+        </router-link>
 
         <h2 class="md-title toolbar-title" style="flex: 1">{{ $store.state.title }}</h2>
 
