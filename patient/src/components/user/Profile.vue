@@ -155,7 +155,9 @@ export default {
   components: {  },
   methods : {
     save() {
-      this.$store.dispatch('user/profile/save', this.user);
+      this.$store.dispatch('user/profile/save', this.user).then(() => {
+        this.$router.push({ name: 'home' })
+      });
     },
     addDisease(value) {
       this.$store.dispatch('user/profile/addDisease', value);
