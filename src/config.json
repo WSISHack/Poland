@@ -14,7 +14,7 @@
             {
                 "text": "Med info",
                 "icon": "assignment",
-                "pathName": "med_info"
+                "pathName": "medinfo"
             },
             {
                 "text": "Suggested",

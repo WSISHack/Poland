@@ -10,6 +10,8 @@ import SearchPage from './components/search/SearchPage'
 import Product from './components/product/Product'
 import Profile from './components/user/Profile'
 import Suggested from './components/suggested/Suggested'
+import MedInfo from './components/medinfo/MedInfo';
+import {calculatePatchSize} from 'quagga';
 
 Vue.use(VueRouter)
 
@@ -53,6 +55,12 @@ const routes = [
         component: Suggested, 
         meta: { requiresAuth: true },
         name: 'suggested'
+    },
+    {
+        path: '/medinfo',
+        component: MedInfo,
+        meta: { requiresAuth: true },
+        name: 'medinfo'
     },
 ]
 
