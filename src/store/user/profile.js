@@ -40,8 +40,9 @@ const profile = {
         city: null,
         state: null,
         zipCode: null,
+        lifestyle: null,
         diseases: [],
-        allergens: []
+        allergens: [],
       }
   },
 
