@@ -76,12 +76,15 @@ const profile = {
 
   actions: { 
     save ({ commit, state, getters, rootGetters }, value) {
+      return new Promise(resolve => { 
+        const user = rootGetters['user/current'];
 
-      const user = rootGetters['user/current'];
+        commit('save', value);
 
-      firebase.database().ref('users/' + user.uid + "/profile").set(value);
-
-      commit('save', value);
+        firebase.database().ref('users/' + user.uid + "/profile").set(value).then(() => {
+          resolve();
+        });
+      });
     },
     addDisease ({commit, state}, value) {
       commit('addDisease', value);
