@@ -1,0 +1,9 @@
+{
+  "name": "GenewaApp",
+  "short_name": "GenewaApp",
+  "display": "fullscreen",
+  "background_color": "#fff",
+  "description": "GenewaApp",
+  "start_url": "/",
+  "orientation": "portrait"
+}
