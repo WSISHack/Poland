@@ -6,7 +6,6 @@ import store from './store/store'
 
 import Login from './components/login/Login'
 import Home from './components/home/Home'
-import OpenFoodApi from './components/OpenFoodApi/OpenFoodApi'
 import SearchPage from './components/search/SearchPage'
 import Product from './components/product/Product'
 import Profile from './components/user/Profile'
