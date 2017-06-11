@@ -19,7 +19,7 @@ export default {
         target: '#scanner-viewport',
       },
       decoder : {
-        readers : ["ean_reader"]
+        readers : [ "ean_reader", "ean_8_reader" ]
       }
     }, function(err) {
         if (err) {
