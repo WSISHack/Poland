@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 
 const profile = {
   namespaced: true,
@@ -34,7 +35,7 @@ const profile = {
         surname: null,
         age: null,
         sex: 0,
-        growth: null,
+        height: null,
         weight: null,
         address: null,
         city: null,
@@ -74,7 +75,12 @@ const profile = {
   },
 
   actions: { 
-    save ({ commit, state }, value) {
+    save ({ commit, state, getters, rootGetters }, value) {
+
+      const user = rootGetters['user/current'];
+
+      firebase.database().ref('users/' + user.uid + "/profile").set(value);
+
       commit('save', value);
     },
     addDisease ({commit, state}, value) {

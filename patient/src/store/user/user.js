@@ -24,6 +24,10 @@ const user = {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             state.current = firebase.auth().currentUser;
+
+            firebase.database().ref('/users/' + state.current.uid + "/profile").once('value').then(function(snapshot) {
+              state.profile.user = snapshot.val();
+            });
             
             resolve(true);
           } else {
