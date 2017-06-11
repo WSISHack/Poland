@@ -18,8 +18,8 @@
       </md-input-container>
 
       <md-input-container>
-        <label>Growth</label>
-        <md-input v-model="user.growth"></md-input>
+        <label>Height</label>
+        <md-input v-model="user.height"></md-input>
       </md-input-container>
 
       <md-input-container>

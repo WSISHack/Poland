@@ -17,7 +17,7 @@
               <span><b>Ingredients</b></span>
               <md-list-expand true>
                 <md-list>
-                  <md-list-item class="md-inset" v-for="ingredient in ingredients"><p style="font-size:14px">{{ingredient}}</p> 
+                  <md-list-item v-if="ingredients" class="md-inset" v-for="ingredient in ingredients"><p style="font-size:14px">{{ingredient}}</p> 
                     
                         <md-icon v-if="badIngredients.indexOf(ingredient) >= 0 " style="color:red">priority_high</md-icon>
                         <md-icon v-if="goodIngredients.indexOf(ingredient)  >= 0 " style="color:green">spa</md-icon>
@@ -44,7 +44,7 @@
                     </md-table-header>
 
                     <md-table-body>
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.energy">
                         <md-table-cell>{{nutrients.energy.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy.per_hundred}}{{nutrients.energy.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy.per_portion}}{{nutrients.energy.unit}}</md-table-cell>
@@ -52,14 +52,14 @@
                       </md-table-row>
 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.energy_kcal">
                         <md-table-cell>{{nutrients.energy_kcal.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_hundred}}{{nutrients.energy_kcal.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_portion}}{{nutrients.energy_kcal.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_day}}{{nutrients.energy_kcal.unit}}</md-table-cell>
                       </md-table-row> 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.fat">
                         <md-table-cell>{{nutrients.fat.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.fat.per_hundred}}{{nutrients.fat.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.fat.per_portion}}{{nutrients.fat.unit}}</md-table-cell>
@@ -67,14 +67,14 @@
                       </md-table-row> 
 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.saturated_fat">
                         <md-table-cell>{{nutrients.saturated_fat.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_hundred}}{{nutrients.saturated_fat.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_portion}}{{nutrients.saturated_fat.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_day}}{{nutrients.saturated_fat.unit}}</md-table-cell>
                       </md-table-row> 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.carbohydrates">
                         <md-table-cell>{{nutrients.carbohydrates.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_hundred}}{{nutrients.carbohydrates.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_portion}}{{nutrients.carbohydrates.unit}}</md-table-cell>
@@ -82,14 +82,14 @@
                       </md-table-row> 
 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.sugars">
                         <md-table-cell>{{nutrients.sugars.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.sugars.per_hundred}}{{nutrients.sugars.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.sugars.per_portion}}{{nutrients.sugars.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.sugars.per_day}}{{nutrients.sugars.unit}}</md-table-cell>
                       </md-table-row> 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.fiber">
                         <md-table-cell>{{nutrients.fiber.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.fiber.per_hundred}}{{nutrients.fiber.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.fiber.per_portion}}{{nutrients.fiber.unit}}</md-table-cell>
@@ -97,7 +97,7 @@
                       </md-table-row> 
 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.protein">
                         <md-table-cell>{{nutrients.protein.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.protein.per_hundred}}{{nutrients.protein.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.protein.per_portion}}{{nutrients.protein.unit}}</md-table-cell>
@@ -105,7 +105,7 @@
                       </md-table-row> 
 
 
-                      <md-table-row>
+                      <md-table-row v-if="nutrients.salt">
                         <md-table-cell>{{nutrients.salt.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.salt.per_hundred}}{{nutrients.salt.unit}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.salt.per_portion}}{{nutrients.salt.unit}}</md-table-cell>
