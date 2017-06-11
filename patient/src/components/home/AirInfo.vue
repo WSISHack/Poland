@@ -37,7 +37,7 @@
         .catch(() => this.pollution = '73%');
       getWeatherByCoordinates(46.202589, 6.141942)
         .then((data) => this.humidity = `${data.main.humidity}%`)
-        .catch(() => this.pollution = '57%');
+        .catch(() => this.humidity = '57%');
     },
     methods: {
       setChart(type){
