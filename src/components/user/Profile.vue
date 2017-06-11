@@ -18,11 +18,6 @@
       </md-input-container>
 
       <md-input-container>
-        <label>Sex</label>
-        <md-input v-model="user.sex"></md-input>
-      </md-input-container>
-
-      <md-input-container>
         <label>Growth</label>
         <md-input v-model="user.growth"></md-input>
       </md-input-container>
@@ -108,6 +103,13 @@
           </md-list-item>
         </md-list>
       </div>
+
+
+      <md-list>
+        <label class="label">Sex</label>
+        <md-radio v-model="user.sex" id="my-test2" name="my-test-group1" md-value="2">Female</md-radio>
+        <md-radio v-model="user.sex" id="my-test3" name="my-test-group1" md-value="3">Male</md-radio>
+      </md-list>
 
       <md-layout md-align="end">
         <md-button class="md-raised md-primary left" @click.native="save">Save</md-button>
