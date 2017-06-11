@@ -8,6 +8,7 @@ import Login from './components/login/Login'
 import Home from './components/home/Home'
 import SearchPage from './components/search/SearchPage'
 import Product from './components/product/Product'
+import Profile from './components/user/Profile'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,12 @@ const routes = [
         component: Product, 
         meta: { requiresAuth: true },
         name: 'product'
+    },
+    { 
+        path: '/profile', 
+        component: Profile, 
+        meta: { requiresAuth: true },
+        name: 'profile'
     },
 ]
 
