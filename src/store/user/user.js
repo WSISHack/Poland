@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 
 import LoginForm from './loginForm'
+import Profile from './profile'
 
 const user = {
   namespaced: true,
@@ -63,7 +64,8 @@ const user = {
   },
 
   modules: {
-    loginForm: LoginForm
+    loginForm: LoginForm,
+    profile: Profile
   }
 }
 
