@@ -1,3 +1,5 @@
+import jquery from 'jquery'
+
 const scanner = {
   namespaced: true,
 
@@ -26,6 +28,18 @@ const scanner = {
 
           resolve(barcode);
         });
+    },
+
+    translate ({ commit, state }, data) {
+      return jquery.get("https://translate.googleapis.com/translate_a/single", 
+        { 
+          client: "gtx", 
+          sl: 'auto', 
+          tl: 'en', 
+          dt: "t", 
+          q: data.text
+        } 
+      );
     }
   },
 

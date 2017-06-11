@@ -17,6 +17,11 @@ export default {
     this.$store.commit('setTitle', 'Product');
     console.log(this.$route);
 
+     this.$store.dispatch('scanner/translate', { text: "lubię placki" })
+        .then((result) => {
+          console.log(result);
+        })
+
   },
   data () {
     return {
