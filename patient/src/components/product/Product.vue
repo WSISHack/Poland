@@ -168,7 +168,7 @@ export default {
   name: 'product',
   created () {
     this.$store.commit('setTitle', 'Product');
-    this.$store.dispatch('scanner/getProducts', [ this.$route.params.barcode ])
+    this.$store.dispatch('scanner/getProducts', [5601045300022])//this.$route.params.barcode ])
       .then(this.processResult);
   },
   mounted () {
@@ -219,13 +219,15 @@ export default {
 
         this.$store.dispatch('scanner/translate', { text: product.ingredients_translations.de })
           .then((result) => {
+            console.log("xxxxx")
             this.ingredients = getArrayOfIngredients(result[0][0][0]);
-
+            this.ingredients = this.ingredients.concat(getArrayOfSymbols(result[0][0][0]));
           });
-
-        
       }
       else {
+            this.ingredients_tmp = getArrayOfIngredients(this.ingredients);
+            this.ingredients = this.ingredients_tmp.concat(getArrayOfSymbols(this.ingredients));
+
       }
 
     }
