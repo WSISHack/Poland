@@ -2,9 +2,9 @@
   <md-card class="container">
     <md-card-content
       <div class="charts">
-        <line-chart height="300" v-show="chart === 'macros'" :data="macros"></line-chart>
-        <line-chart height="300" v-show="chart === 'measurement'" :data="measurement"></line-chart>
-        <line-chart height="300" v-show="chart === 'air'" :data="air"></line-chart>
+        <line-chart :height="300" v-show="chart === 'macros'" :data="macros"></line-chart>
+        <line-chart :height="300" v-show="chart === 'measurement'" :data="measurement"></line-chart>
+        <line-chart :height="300" v-show="chart === 'air'" :data="air"></line-chart>
       </div>
       <div class="buttons">
         <md-button class="md-raised md-primary" @click.native="setChart('macros')">MACROS</md-button>
