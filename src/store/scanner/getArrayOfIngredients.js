@@ -1,5 +1,5 @@
 /**
- * Return normalized array of ingredients from text
+ * Returns normalized array of ingredients from text
  * @param {string} ingredientsText text contains ingredients
  */
 function getArrayOfIngredients(ingredientsText){
