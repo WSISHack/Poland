@@ -9,7 +9,8 @@
 export default {
   name: 'product',
   created () {
-    this.$store.commit('setTitle', 'Product')
+    this.$store.commit('setTitle', 'Product');
+    console.log(this.$route);
   },
   data () {
     return {
