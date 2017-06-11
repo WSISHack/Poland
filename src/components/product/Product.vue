@@ -145,7 +145,7 @@ export default {
   name: 'product',
   created () {
     this.$store.commit('setTitle', 'Product');
-    this.$store.dispatch('scanner/getProducts', [ 7611654884033 ])//90162909 ])//this.$route.params.barcode ])
+    this.$store.dispatch('scanner/getProducts', [ this.$route.params.barcode ])
       .then(this.processResult);
 
 
