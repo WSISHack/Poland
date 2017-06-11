@@ -50,7 +50,6 @@ const profile = {
   mutations: {
     save (state, value) {
       state.user = value;
-      console.log(value);
     },
     addDisease (state, value) {
       let id = state.diseases.indexOf(value);

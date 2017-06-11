@@ -177,9 +177,6 @@ export default {
     getAllergens() {
       return this.$store.getters['user/profile/allergens'];
     },
-    mouseOver() {
-      console.log("DUPA")
-    }
   }
 }
 </script>

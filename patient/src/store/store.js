@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 
 import User from './user/user'
 import Scanner from './scanner/scanner'
+import MedIfno from './medInfo/medInfo'
 
 Vue.use(Vuex)
 
@@ -58,7 +59,8 @@ const store = new Vuex.Store({
 
   modules: {
       user: User,
-      scanner: Scanner
+      scanner: Scanner,
+      medInfo: MedIfno
   }
 })
 
