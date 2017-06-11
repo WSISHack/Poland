@@ -11,6 +11,7 @@ import Product from './components/product/Product'
 import Profile from './components/user/Profile'
 import Suggested from './components/suggested/Suggested'
 import MedInfo from './components/medinfo/MedInfo';
+import City from './components/city/City';
 import {calculatePatchSize} from 'quagga';
 
 Vue.use(VueRouter)
@@ -62,6 +63,12 @@ const routes = [
         meta: { requiresAuth: true },
         name: 'medinfo'
     },
+    {
+        path: '/city',
+        component: City,
+        meta: { requiresAuth: true },
+        name: 'city'
+    }
 ]
 
 const router = new VueRouter({
