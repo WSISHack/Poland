@@ -1,0 +1,26 @@
+{
+    "bottomBar": {
+        "items": [
+            {
+                "text": "Dashboard",
+                "icon": "dashboard",
+                "pathName": "home"
+            },
+            {
+                "text": "Scan",
+                "icon": "search",
+                "pathName": "scanner"
+            },
+            {
+                "text": "Med info",
+                "icon": "assignment",
+                "pathName": "medinfo"
+            },
+            {
+                "text": "Suggested",
+                "icon": "shopping_cart",
+                "pathName": "suggested"
+            }
+        ]
+    }
+}
