@@ -34,6 +34,7 @@ export default {
       if(!this.$store.getters['scanner/scanning']) {
         this.$store.dispatch('scanner/process', data)
           .then((barcode) => {
+            this.$router.push({ name: 'product' })
           })
       }
     });
