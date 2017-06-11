@@ -17,6 +17,9 @@ export default {
         name : "Live",
         type : "LiveStream",
         target: '#scanner-viewport',
+        constraints: {
+          facingMode: "environment"
+        },
       },
       decoder : {
         readers : [ "ean_reader", "ean_8_reader" ]
