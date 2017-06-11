@@ -21,6 +21,8 @@
 </template>
 
 <script>
+// import translate from 'google-translate-api'
+
 export default {
   name: 'hello',
   data () {
