@@ -1,0 +1,21 @@
+{
+    "bottomBar": {
+        "items": [
+            {
+                "text": "Home",
+                "icon": "shopping_cart",
+                "pathName": "home"
+            },
+            {
+                "text": "Test page 2",
+                "icon": "apps",
+                "pathName": "test_page_2"
+            },
+            {
+                "text": "Test page 3",
+                "icon": "dashboard",
+                "pathName": "test_page_3"
+            }
+        ]
+    }
+}

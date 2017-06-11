@@ -13,8 +13,12 @@
     "child_process": "^1.0.2",
     "firebase": "^4.1.2",
     "firebase-tools": "^3.9.1",
+<<<<<<< HEAD
     "jquery": "^3.2.1",
+=======
+    "fs": "0.0.1-security",
     "google-translate-api": "^2.2.2",
+>>>>>>> 8f78e5c6ab7f5652db78c1f002e921df943ab86a
     "quagga": "^0.12.1",
     "vue": "^2.3.3",
     "vue-material": "^0.7.1",
