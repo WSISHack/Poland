@@ -5,7 +5,7 @@
         <span class="md-title">{{ productName }}</span>
       </p>
       <p>
-        Skład
+        {{ ingredients }}
       </p>
   </div>
 </template>
@@ -26,7 +26,8 @@ export default {
   },
   data () {
     return {
-      productName: "-"
+      productName: "-",
+      ingredients: "-"
     }
   },
   components: {  },
@@ -36,9 +37,27 @@ export default {
 
       const product = result.data[0];
 
+      if(product == null) {
+        this.$router.push({ name: 'scanner' });
+        return;
+      }
+
       this.productName = product.display_name_translations.en;
       if(!this.productName) {
         this.productName = product.display_name_translations.de;
+      }
+
+      this.ingredients = product.ingredients_translations.en;
+      if(!this.ingredients) {
+        this.ingredients = product.ingredients_translations.de;
+
+        this.$store.dispatch('scanner/translate', { text: product.ingredients_translations.de })
+          .then((result) => {
+            console.log(result);
+            this.ingredients = result[0][0][0];
+          });
+
+        
       }
 
     }
