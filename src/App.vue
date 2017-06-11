@@ -22,6 +22,15 @@ export default {
     Toolbar,
     BottomBar,
     GlobalDialog
+  },
+  created () {
+    this.initTracker();
+
+  },
+  methods: {
+    initTracker() {
+      console.log("test")
+    }
   }
 }
 </script>

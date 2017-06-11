@@ -2,9 +2,12 @@
   <div>
     <md-whiteframe md-elevation="2">
       <md-toolbar>
-        <md-button class="md-icon-button" @click.native="toggleLeftSidenav" v-if="$store.state.sidenavEnabled">
+        <!--<md-button class="md-icon-button" @click.native="toggleLeftSidenav" v-if="$store.state.sidenavEnabled">
           <md-icon>menu</md-icon>
-        </md-button>
+        </md-button>-->
+         <md-avatar class="md-small">
+            <img src="../assets/fabian.jpg">
+          </md-avatar>
 
         <h2 class="md-title toolbar-title" style="flex: 1">{{ $store.state.title }}</h2>
 
