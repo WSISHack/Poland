@@ -37,11 +37,6 @@ const routes = [
         name: 'scanner'
     },
     { 
-        path: '/openfood', 
-        component: OpenFoodApi,
-        name: 'openfood'
-    },
-    { 
         path: '/product', 
         component: Product, 
         meta: { requiresAuth: true },

@@ -1,4 +1,5 @@
 import jquery from 'jquery'
+import $ from 'jquery'
 
 const scanner = {
   namespaced: true,
@@ -40,6 +41,46 @@ const scanner = {
           q: data.text
         } 
       );
+    },
+
+    getProductById(id) {
+      return $.ajax({
+        method: "GET",
+        url: "https://www.openfood.ch/api/v3/products/" +id,
+        dataType: 'json',
+        headers: {
+          "Authorization": "Token token=" + keys.openFoodKey,
+        },
+      });
+    },
+
+    getProducts(barcodesArray) {
+      return $.ajax({
+        method: "GET",
+        url: "https://www.openfood.ch/api/v3/products?barcodes="+barcodesArray.join(","),
+        dataType: 'json',
+        headers: {
+          "Authorization": "Token token=" + keys.openFoodKey,
+        }
+      });
+    },
+
+    search(query) {
+      return $.ajax({
+        method: "POST",
+        url: "https://www.openfood.ch/api/v3/products/_search",
+        dataType: 'json',
+        headers: {
+          "Authorization": "Token token=" + keys.openFoodKey,
+        },
+        data: JSON.stringify({
+          "query": {
+            "query_string": {
+              "query" : query
+            }
+          }
+        })
+      });
     }
   },
 
