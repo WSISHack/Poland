@@ -10,6 +10,9 @@
         <md-list-item @click.native="navigate('scanner')">
             <md-icon>list</md-icon> <span>Scanner</span>
         </md-list-item>
+        <md-list-item @click.native="navigate('profile')">
+            <md-icon>list</md-icon> <span>User profile</span>
+        </md-list-item>
     </md-list>
   </div>
 </template>
