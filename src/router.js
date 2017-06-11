@@ -9,6 +9,7 @@ import Home from './components/home/Home'
 import SearchPage from './components/search/SearchPage'
 import Product from './components/product/Product'
 import Profile from './components/user/Profile'
+import Suggested from './components/suggested/Suggested'
 
 Vue.use(VueRouter)
 
@@ -46,6 +47,12 @@ const routes = [
         component: Profile, 
         meta: { requiresAuth: true },
         name: 'profile'
+    },
+    { 
+        path: '/suggested', 
+        component: Suggested, 
+        meta: { requiresAuth: true },
+        name: 'suggested'
     },
 ]
 

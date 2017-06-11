@@ -12,7 +12,7 @@ import Scanner from './Scanner'
 export default {
   name: 'search-page',
   created () {
-    this.$store.commit('setTitle', 'Find product')
+    this.$store.commit('setTitle', 'Scan')
   },
   data () {
     return {

@@ -1,23 +1,25 @@
 
 <template>
   <div>
-    Test page 1<br>Test page 1<br>Test page 1<br>Test page 1<br>Test page 1<br>Test page 1<br>
-    Test page 1<br>Test page 1<br>Test page 1<br>Test page 1<br>
-    Test page 1<br>Test page 1<br>Test page 1<br>
+    <air-info></air-info>
+    <charts></charts>
   </div>
 </template>
 
 <script>
+import Charts from './Charts';
+import AirInfo from './AirInfo';
+
 export default {
   name: 'home',
   created () {
-    this.$store.commit('setTitle', 'Home')
+    this.$store.commit('setTitle', 'Dashboard')
   },
   data () {
     return {
     }
   },
-  components: {  }
+  components: { Charts, AirInfo }
 }
 </script>
 

@@ -1,6 +1,6 @@
   <template>
   <div>
-    <md-sidenav class="md-left" :md-swipeable="true" ref="leftSidenav" v-if="$store.state.sidenavEnabled">
+    <md-sidenav class="md-left" :md-swipeable="false" ref="leftSidenav" v-if="$store.state.sidenavEnabled">
       <md-card class="user-card">
 
         <md-card-header>
