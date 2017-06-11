@@ -4,20 +4,21 @@ const profile = {
 
   state: { 
       user: {
-        name: "",
-        surname: "",
-        age: "",
-        growth: "",
-        weight: "",
-        address: "",
-        city: "",
-        state: "",
-        zipCode: ""
+        name: null,
+        surname: null,
+        age: null,
+        growth: null,
+        weight: null,
+        address: null,
+        city: null,
+        state: null,
+        zipCode: null
       }
   },
 
   mutations: {
     save (state, value) {
+      console.log("save mutation", value)
       state.user = value;
     }
   },
@@ -28,19 +29,11 @@ const profile = {
     }
   },
 
-  // getters: { 
-  //   emailValid: (state, getters) => {
-  //     return state.email && state.email.length > 0;
-  //   },
-
-  //   passwordValid: (state, getters) => {
-  //     return state.password && state.password.length > 0;
-  //   },
-
-  //   valid: (state, getters) => {
-  //     return getters.emailValid && getters.passwordValid;
-  //   }
-  // }
+  getters: {
+    user: (state, getters) => {
+      return state.user;
+    },
+  }
 }
 
 export default profile;

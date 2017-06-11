@@ -65,20 +65,12 @@ export default {
   created() {
     this.$store.commit('setTitle', 'Your profile');
   },
-  
   data() {
-    return {
-      user: {
-        name: "",
-        surname: "",
-        age: "",
-        growth: "",
-        weight: "",
-        address: "",
-        city: "",
-        state: "",
-        zipCode: ""
-      }
+    return {}
+  },
+  computed: {
+    user() {
+      return this.$store.getters['user/profile/user'];
     }
   },
   components: {  },
