@@ -1,7 +1,7 @@
 <template>
  <div class="container">
     <form novalidate @submit.stop.prevent="submit">
-      <md-input-container>
+      <md-input-container class="input-container">
         <label>Blood glucose level (mg/dl)</label>
         <md-input v-model="medInfo.glucose"></md-input>
       </md-input-container>
@@ -61,6 +61,9 @@ export default {
     padding-left: 16px;
     padding-right: 16px;
   }
+  .inline {
+    padding-right: 8px;
+  }
   .label {
     width: 100%;
     min-height: 48px;
@@ -73,5 +76,8 @@ export default {
     color: rgba(0,0,0,.54);
     font-family: inherit;
     font-size: 16px;
+  }
+  .input-container {
+    margin-bottom: 16px;
   }
 </style>
