@@ -48,7 +48,9 @@ export default {
   components: {},
   methods: {
     save () {
-      this.$store.dispatch('medInfo/save', this.medInfo);
+      this.$store.dispatch('medInfo/save', this.medInfo).then(() => {
+        this.$router.push({ name: 'home' });
+      });
     }
   }
 }

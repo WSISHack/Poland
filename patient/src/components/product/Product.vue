@@ -124,7 +124,17 @@
               <span><b>Recommend</b></span>
 
               <md-list-expand>
+                
                 <md-list>
+
+                  <md-layout md-gutter md-align="center" style="margin-top: 20px;">
+                    <span class="md-caption tab-prop-1">Typ 1</span>
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="md-caption tab-prop-2">Typ 2</span>
+                    &nbsp;&nbsp;&nbsp;
+                    <span class="md-caption tab-prop-3">Typ 3</span>
+                  </md-layout>
+
                       <md-table>
                         <md-table-header>
                           <md-table-row>
@@ -217,9 +227,13 @@ export default {
       if(!this.ingredients) {
         this.ingredients = product.ingredients_translations.de;
 
-        this.$store.dispatch('scanner/translate', { text: product.ingredients_translations.de })
+        if(!this.ingredients)
+          this.ingredients = product.ingredients_translations.fr;
+
+        console.log("tmp", product.ingredients_translations);
+
+        this.$store.dispatch('scanner/translate', { text: this.ingredients })
           .then((result) => {
-            console.log("xxxxx")
             this.ingredients = getArrayOfIngredients(result[0][0][0]);
             this.ingredients = this.ingredients.concat(getArrayOfSymbols(result[0][0][0]));
           });
