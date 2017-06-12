@@ -3,9 +3,7 @@
 # Poland
 Repostitory for team Poland!
 
-# genewa
-
-> GenewaApp
+# ConnectedHealth
 
 ## Intro
 
