@@ -217,9 +217,13 @@ export default {
       if(!this.ingredients) {
         this.ingredients = product.ingredients_translations.de;
 
-        this.$store.dispatch('scanner/translate', { text: product.ingredients_translations.de })
+        if(!this.ingredients)
+          this.ingredients = product.ingredients_translations.fr;
+
+        console.log("tmp", product.ingredients_translations);
+
+        this.$store.dispatch('scanner/translate', { text: this.ingredients })
           .then((result) => {
-            console.log("xxxxx")
             this.ingredients = getArrayOfIngredients(result[0][0][0]);
             this.ingredients = this.ingredients.concat(getArrayOfSymbols(result[0][0][0]));
           });
