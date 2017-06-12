@@ -2,7 +2,7 @@
   <md-card class="container">
     <md-card-content
       <div class="charts">
-        <line-chart :height="300" :chartData="chartData"></line-chart>
+        <line-chart :height="300" :options="options" :chartData="chartData"></line-chart>
       </div>
 
       <md-button-toggle md-single class="md-primary">
@@ -80,6 +80,13 @@
     data () {
       return {
         chartData: data.macros,
+        options: {
+          legend: {
+            labels: {
+              boxWidth: 3
+            }
+          }
+        }
       }
     },
     methods: {

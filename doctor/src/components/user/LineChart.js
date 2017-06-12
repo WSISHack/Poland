@@ -4,6 +4,12 @@ export default Line.extend({
   mixins: [mixins.reactiveProp],
   props: ['chartData', 'options'],
   mounted () {
-    this.renderChart(this.chartData, this.options);
+    this.renderChart(this.chartData, {
+      legend: {
+        labels: {
+          boxWidth: 3
+        }
+      }
+    });
   }
 });
