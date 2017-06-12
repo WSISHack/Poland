@@ -1,7 +1,7 @@
 <template>
   <div>
     <md-bottom-bar @change="onChange">
-        <md-bottom-bar-item v-for="item in items" :md-icon="item.icon" :md-active="active(item)">{{ item.text }}</md-bottom-bar-item>
+        <md-bottom-bar-item v-for="(item, id) in items" :key="id" :md-icon="item.icon" :md-active="active(item)">{{ item.text }}</md-bottom-bar-item>
     </md-bottom-bar>
   </div>
 </template>

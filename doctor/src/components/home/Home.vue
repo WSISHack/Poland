@@ -3,7 +3,7 @@
     <search></search>
     <div class="phone-viewport">
       <md-list class="custom-list md-triple-line">
-        <md-list-item v-for="patient in patients" @click.native="navigate()">
+        <md-list-item v-for="(patient, id) in patients" :key="id" @click.native="navigate()">
           <md-avatar>
             <img :src="patient.photo" alt="People">
           </md-avatar>
