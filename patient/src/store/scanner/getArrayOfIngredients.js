@@ -3,7 +3,7 @@
  * @param {string} ingredientsText text contains ingredients
  */
 function getArrayOfIngredients(ingredientsText){
-  const parsed = removeBrackets(ingredientsText)
+  const parsed = removeSymbols(removeBrackets(ingredientsText))
     .replace(/^Ingredients\:/g, '')
     .split(',')
     .map((x) => normalize(removePercent(x)));
@@ -18,6 +18,10 @@ function removePercent(text){
 
 function removeBrackets(text){
   return text.replace(/[<(][^(]*[>)]/g, '');
+}
+
+function removeSymbols(text){
+  return text.replace(/E\s?[\dd]+/g, '');
 }
 
 function normalize(text){

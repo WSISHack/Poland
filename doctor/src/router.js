@@ -6,13 +6,9 @@ import store from './store/store'
 
 import Login from './components/login/Login'
 import Home from './components/home/Home'
-import SearchPage from './components/search/SearchPage'
-import Product from './components/product/Product'
+import Cities from './components/home/Cities'
 import Profile from './components/user/Profile'
-import Suggested from './components/suggested/Suggested'
-import MedInfo from './components/medinfo/MedInfo';
 import City from './components/city/City';
-import {calculatePatchSize} from 'quagga';
 
 Vue.use(VueRouter)
 
@@ -34,34 +30,16 @@ const routes = [
         name: 'home'
     },
     { 
-        path: '/scanner', 
-        component: SearchPage, 
+        path: '/cities', 
+        component: Cities, 
         meta: { requiresAuth: true },
-        name: 'scanner'
-    },
-    { 
-        path: '/product', 
-        component: Product, 
-        meta: { requiresAuth: true },
-        name: 'product'
+        name: 'cities'
     },
     { 
         path: '/profile', 
         component: Profile, 
         meta: { requiresAuth: true },
         name: 'profile'
-    },
-    { 
-        path: '/suggested', 
-        component: Suggested, 
-        meta: { requiresAuth: true },
-        name: 'suggested'
-    },
-    {
-        path: '/medinfo',
-        component: MedInfo,
-        meta: { requiresAuth: true },
-        name: 'medinfo'
     },
     {
         path: '/city',

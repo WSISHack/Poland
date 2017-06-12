@@ -9,7 +9,7 @@
           </md-card-media>
           <md-card-header-text>
             <div class="md-title">Andrzej Śmieszek</div>
-            <div class="md-subhead">Geneva (Switzerland), 23 years old</div>
+            <div class="md-subhead"><router-link to="/city">Geneva (Switzerland)</router-link>, 23 years old</div>
           </md-card-header-text>
         </md-card-header>
       </md-card>
