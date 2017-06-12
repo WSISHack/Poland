@@ -152,7 +152,9 @@
                           <md-table-row>
                             <md-table-cell>
                               <p>Apéritiv tonic water <md-icon style="font-size:22px; color:green;">local_hospital</md-icon> <md-icon style="font-size:22px; color:blue;">people</md-icon></p> 
-                              <p><span class="tab-prop-1">0.0g</span> <span class="tab-prop-2">8g</span></p>
+                              <p><span class="tab-prop-1">0.0g</span>
+                              <br /><br />
+                              <span class="tab-prop-2">8g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>32</p>
@@ -160,11 +162,14 @@
                             </md-table-cell>
                           </md-table-row>
 
-                        
                           <md-table-row>
                             <md-table-cell>
                               <p>Orangina: mit fruchtfleisch <md-icon style="font-size:22px; color:green;">local_hospital</md-icon></p>
-                              <p><span class="tab-prop-1">0.1g</span> <span class="tab-prop-2">8.9g</span></p>
+                              <p>
+                                <span class="tab-prop-1">0.1g</span>
+                                <br /><br />
+                                <span class="tab-prop-2">8.9g</span>
+                              </p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>39</p>
@@ -175,7 +180,9 @@
                           <md-table-row>
                             <md-table-cell>
                               <p>Gingo: ginger + lemon <md-icon style="font-size:22px; color:blue;">people</md-icon></p>
-                              <p><span class="tab-prop-1">0.0g</span> <span class="tab-prop-2">11.25g</span></p>
+                              <p><span class="tab-prop-1">0.0g</span>
+                              <br /><br />
+                              <span class="tab-prop-2">11.25g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>110</p>
@@ -200,7 +207,9 @@
                           <md-table-row>
                             <md-table-cell>
                               <p>Alnatura marzipan zarbitter <md-icon style="font-size:22px; color:green;">local_hospital</md-icon> <md-icon style="font-size:22px; color:blue;">people</md-icon></p>
-                              <p><span class="tab-prop-1">7.2g</span> <span class="tab-prop-2">49.0g</span></p>
+                              <p><span class="tab-prop-1">7.2g</span>
+                              <br /><br />
+                              <span class="tab-prop-2">49.0g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>490</p>
@@ -212,7 +221,9 @@
                           <md-table-row>
                             <md-table-cell>
                               <p>Alnatura amaranth <md-icon style="font-size:22px; color:green;">local_hospital</md-icon></p>
-                              <p><span class="tab-prop-1">7.7g</span> <span class="tab-prop-2">50.0g</span></p>
+                              <p><span class="tab-prop-1">7.7g</span>
+                              <br /><br />
+                              <span class="tab-prop-2">50.0g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>484</p>
@@ -223,7 +234,9 @@
                           <md-table-row>
                             <md-table-cell>
                               <p>Balisto muesli goût noisettes raisins biscuit aux céréales<md-icon style="font-size:22px; color:blue;">people</md-icon></p>
-                              <p><span class="tab-prop-1">6.7g</span> <span class="tab-prop-2">59.8g</span></p>
+                              <p><span class="tab-prop-1">6.7g</span>
+                              <br /><br />
+                              <span class="tab-prop-2">59.8g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>508</p>
@@ -399,4 +412,5 @@ export default {
   -moz-text-decoration-color: green;
   text-decoration-color: green;
 }
+
 </style>
