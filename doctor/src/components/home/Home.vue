@@ -16,7 +16,6 @@
 
           <md-divider class="md-inset"></md-divider>
         </md-list-item>
-
       </md-list>
     </div>
   </div>
@@ -34,7 +33,7 @@ export default {
     return {
       patients: [
         {
-          name: 'Ali Conors',
+          name: 'Minenhle Naidoo',
           age: 52,
           sex: 'female',
           city: 'Johannesburg, South Africa',
@@ -48,7 +47,14 @@ export default {
           photo: '/static/img/fabian.8c661d7.jpg'
         },
         {
-          name: 'Krystyna Gryzisut',
+          name: 'Aditi Sodhi',
+          age: 30,
+          sex: 'female',
+          city: 'New Delhi, India',
+          photo: '/static/img/india_woman.f19342e.jpg'
+        },
+        {
+          name: 'Krystyna Nowak',
           age: 34,
           sex: 'female',
           city: 'Gliwice, Poland',

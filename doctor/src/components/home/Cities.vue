@@ -37,6 +37,10 @@ export default {
           patients: '25 435'
         },
         {
+          name: 'New Delhi, India',
+          patients: '3022'
+        },
+        {
           name: 'Gliwice, Poland',
           patients: '1402'
         },
