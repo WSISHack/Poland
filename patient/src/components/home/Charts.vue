@@ -4,11 +4,13 @@
       <div class="charts">
         <line-chart :height="300" :chartData="chartData"></line-chart>
       </div>
-      <div class="buttons">
-        <md-button class="md-raised md-primary" @click.native="setChart('macros')">MACROS</md-button>
-        <md-button class="md-raised md-accent" @click.native="setChart('measurement')">Measurement</md-button>
-        <md-button class="md-raised md-warn" @click.native="setChart('air')">Air</md-button>
-      </div>
+
+      <md-button-toggle md-single class="md-primary">
+        <md-layout><md-button class="buttons" @click.native="setChart('macros')">Macros</md-button></md-layout>
+        <md-layout><md-button class="buttons" @click.native="setChart('measurement')">Measurement</md-button></md-layout>
+        <md-layout><md-button class="buttons" @click.native="setChart('air')">Air</md-button></md-layout>
+      </md-button-toggle>
+
     </md-card-content>
   </md-card>
 </template>
@@ -21,7 +23,7 @@
       labels: ['11.05.2017', '21.05.2017', '31.05.2017', '11.06.2017'],
       datasets: [
         {
-          label: 'Blood presure',
+          label: 'Blood pressure',
           borderColor: 'red',
           fill: false,
           data: [120, 125, 120, 130, 133, 128, 130, 131]
@@ -99,6 +101,8 @@
   }
 
   .buttons {
-    text-align: center;
+    margin-left:4px; margin-right:4px;
   }
+
+  
 </style>
