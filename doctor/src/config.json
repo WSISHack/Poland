@@ -2,24 +2,14 @@
     "bottomBar": {
         "items": [
             {
-                "text": "Dashboard",
-                "icon": "dashboard",
+                "text": "Patients",
+                "icon": "list",
                 "pathName": "home"
             },
             {
-                "text": "Scan",
-                "icon": "search",
-                "pathName": "scanner"
-            },
-            {
-                "text": "Med info",
-                "icon": "assignment",
-                "pathName": "medinfo"
-            },
-            {
-                "text": "Suggested",
-                "icon": "shopping_cart",
-                "pathName": "suggested"
+                "text": "Cities",
+                "icon": "location_city",
+                "pathName": "cities"
             }
         ]
     }

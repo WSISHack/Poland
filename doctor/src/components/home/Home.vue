@@ -3,7 +3,7 @@
     <search></search>
     <div class="phone-viewport">
       <md-list class="custom-list md-triple-line">
-        <md-list-item v-for="patient in patients" @click.native="this.$router.push({ name: 'profile' })">
+        <md-list-item v-for="patient in patients" @click.native="navigate()">
           <md-avatar>
             <img :src="patient.photo" alt="People">
           </md-avatar>
@@ -55,6 +55,11 @@ export default {
           photo: 'https://placeimg.com/40/40/people/5'
         },
       ]
+    }
+  },
+  methods: {
+    navigate() {
+      this.$router.push({ name: 'profile' });
     }
   },
   components: { Search }
