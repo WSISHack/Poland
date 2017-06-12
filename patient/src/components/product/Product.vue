@@ -4,8 +4,8 @@
       <p style="text-align:center;">
         <span class="md-title">{{ productName }}</span>
       </p>
-      <p style="color:red">
-        <center><b><md-icon>warning</md-icon>Warning! Your are pregnant car!</b></center>
+      <p style="color:red" v-if="showWarning">
+        <center><b><md-icon>warning</md-icon>Warning! This product contains some unhealthy ingredients!</b></center>
       </p>
       <p>
         <!--{{ ingredients }}-->
@@ -21,7 +21,8 @@
                     
                         <md-icon v-if="badIngredients.indexOf(ingredient) >= 0 " style="color:red">priority_high</md-icon>
                         <md-icon v-if="goodIngredients.indexOf(ingredient)  >= 0 " style="color:green">spa</md-icon>
-                      
+                        <md-icon v-if="miscellaneousIngredients.indexOf(ingredient) >= 0 " style="color:#FFD600">help</md-icon>
+       
                   </md-list-item>
                 </md-list>
               </md-list-expand>
@@ -38,8 +39,8 @@
                       <md-table-row>
                         <md-table-head></md-table-head>
                         <md-table-head md-numeric style="text-align: center">100 ({{portionUnit}})</md-table-head>
-                        <md-table-head md-numeric style="text-align: center">{{portionQuantity}} ({{portionUnit}})</md-table-head>
-                        <md-table-head md-numeric style="text-align: center">%</md-table-head>
+                        <!--<md-table-head md-numeric style="text-align: center">{{portionQuantity}} ({{portionUnit}})</md-table-head>-->
+                        <!--<md-table-head md-numeric style="text-align: center">%</md-table-head>-->
                       </md-table-row>
                     </md-table-header>
 
@@ -47,69 +48,69 @@
                       <md-table-row v-if="nutrients.energy">
                         <md-table-cell>{{nutrients.energy.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy.per_hundred}}{{nutrients.energy.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.energy.per_portion}}{{nutrients.energy.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.energy.per_day}}{{nutrients.energy.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.energy.per_portion}}{{nutrients.energy.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.energy.per_day}}{{nutrients.energy.unit}}</md-table-cell>-->
                       </md-table-row>
 
 
                       <md-table-row v-if="nutrients.energy_kcal">
                         <md-table-cell>{{nutrients.energy_kcal.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_hundred}}{{nutrients.energy_kcal.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_portion}}{{nutrients.energy_kcal.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_day}}{{nutrients.energy_kcal.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_portion}}{{nutrients.energy_kcal.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.energy_kcal.per_day}}{{nutrients.energy_kcal.unit}}</md-table-cell>-->
                       </md-table-row> 
 
                       <md-table-row v-if="nutrients.fat">
                         <md-table-cell>{{nutrients.fat.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.fat.per_hundred}}{{nutrients.fat.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.fat.per_portion}}{{nutrients.fat.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.fat.per_day}}{{nutrients.fat.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.fat.per_portion}}{{nutrients.fat.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.fat.per_day}}{{nutrients.fat.unit}}</md-table-cell>-->
                       </md-table-row> 
 
 
                       <md-table-row v-if="nutrients.saturated_fat">
                         <md-table-cell>{{nutrients.saturated_fat.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_hundred}}{{nutrients.saturated_fat.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_portion}}{{nutrients.saturated_fat.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_day}}{{nutrients.saturated_fat.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_portion}}{{nutrients.saturated_fat.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.saturated_fat.per_day}}{{nutrients.saturated_fat.unit}}</md-table-cell>-->
                       </md-table-row> 
 
                       <md-table-row v-if="nutrients.carbohydrates">
                         <md-table-cell>{{nutrients.carbohydrates.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_hundred}}{{nutrients.carbohydrates.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_portion}}{{nutrients.carbohydrates.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_day}}{{nutrients.carbohydrates.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_portion}}{{nutrients.carbohydrates.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.carbohydrates.per_day}}{{nutrients.carbohydrates.unit}}</md-table-cell>-->
                       </md-table-row> 
 
 
                       <md-table-row v-if="nutrients.sugars">
                         <md-table-cell>{{nutrients.sugars.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.sugars.per_hundred}}{{nutrients.sugars.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.sugars.per_portion}}{{nutrients.sugars.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.sugars.per_day}}{{nutrients.sugars.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.sugars.per_portion}}{{nutrients.sugars.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.sugars.per_day}}{{nutrients.sugars.unit}}</md-table-cell>-->
                       </md-table-row> 
 
                       <md-table-row v-if="nutrients.fiber">
                         <md-table-cell>{{nutrients.fiber.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.fiber.per_hundred}}{{nutrients.fiber.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.fiber.per_portion}}{{nutrients.fiber.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.fiber.per_day}}{{nutrients.fiber.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.fiber.per_portion}}{{nutrients.fiber.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.fiber.per_day}}{{nutrients.fiber.unit}}</md-table-cell>-->
                       </md-table-row> 
 
 
                       <md-table-row v-if="nutrients.protein">
                         <md-table-cell>{{nutrients.protein.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.protein.per_hundred}}{{nutrients.protein.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.protein.per_portion}}{{nutrients.protein.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.protein.per_day}}{{nutrients.protein.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.protein.per_portion}}{{nutrients.protein.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.protein.per_day}}{{nutrients.protein.unit}}</md-table-cell>-->
                       </md-table-row> 
 
 
                       <md-table-row v-if="nutrients.salt">
                         <md-table-cell>{{nutrients.salt.name_translations.en}}</md-table-cell>
                         <md-table-cell style="text-align: center">{{nutrients.salt.per_hundred}}{{nutrients.salt.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.salt.per_portion}}{{nutrients.salt.unit}}</md-table-cell>
-                        <md-table-cell style="text-align: center">{{nutrients.salt.per_day}}{{nutrients.salt.unit}}</md-table-cell>
+                        <!--<md-table-cell style="text-align: center">{{nutrients.salt.per_portion}}{{nutrients.salt.unit}}</md-table-cell>
+                        <md-table-cell style="text-align: center">{{nutrients.salt.per_day}}{{nutrients.salt.unit}}</md-table-cell>-->
                       </md-table-row> 
 
 
@@ -128,11 +129,11 @@
                 <md-list>
 
                   <md-layout md-gutter md-align="center" style="margin-top: 20px;">
-                    <span class="md-caption tab-prop-1">Typ 1</span>
+                    <span class="md-caption tab-prop-1">Protein</span>
                     &nbsp;&nbsp;&nbsp;
-                    <span class="md-caption tab-prop-2">Typ 2</span>
+                    <span class="md-caption tab-prop-2">Carbohydrates</span>
                     &nbsp;&nbsp;&nbsp;
-                    <span class="md-caption tab-prop-3">Typ 3</span>
+                    <span class="md-caption tab-prop-3">Fat</span>
                   </md-layout>
 
                       <md-table>
@@ -147,15 +148,37 @@
                           </md-table-row>
                         </md-table-header>
 
-                        <md-table-body>
-                          <md-table-row v-for="(row, index) in 3" :key="index">
+                          <md-table-row>
                             <md-table-cell>
-                              <p>Mleko słonia</p>
-                              <p><span class="tab-prop-1">66g</span> <span class="tab-prop-2">17g</span></p>
+                              <p>Apéritiv tonic water</p>
+                              <p><span class="tab-prop-1">0g</span> <span class="tab-prop-2">8g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
-                              <p>10</p>
-                              <p class="tab-prop-3">12g</p>
+                              <p>32</p>
+                              <p class="tab-prop-3">0g</p>
+                            </md-table-cell>
+                          </md-table-row>
+
+                        <md-table-body>
+                          <md-table-row>
+                            <md-table-cell>
+                              <p>Orangina: mit fruchtfleisch</p>
+                              <p><span class="tab-prop-1">0.1g</span> <span class="tab-prop-2">8.9g</span></p>
+                            </md-table-cell>
+                            <md-table-cell md-numeric>
+                              <p>39</p>
+                              <p class="tab-prop-3">0g</p>
+                            </md-table-cell>
+                          </md-table-row>
+
+                          <md-table-row>
+                            <md-table-cell>
+                              <p>Gingo: ginger + lemon</p>
+                              <p><span class="tab-prop-1">0g</span> <span class="tab-prop-2">11.25g</span></p>
+                            </md-table-cell>
+                            <md-table-cell md-numeric>
+                              <p>110</p>
+                              <p class="tab-prop-3">0g</p>
                             </md-table-cell>
                           </md-table-row>
                         </md-table-body>
@@ -174,11 +197,13 @@
 import getArrayOfIngredients from './../../store/scanner/getArrayOfIngredients'
 import getArrayOfSymbols from './../../store/scanner/getArrayOfSymbols'
 
+const badIngredients = ["E 338", "E 150d"];
+
 export default {
   name: 'product',
   created () {
     this.$store.commit('setTitle', 'Product');
-    this.$store.dispatch('scanner/getProducts', [this.$route.params.barcode ])
+    this.$store.dispatch('scanner/getProducts', [ 54491472 ])//this.$route.params.barcode ])
       .then(this.processResult);
   },
   mounted () {
@@ -191,8 +216,10 @@ export default {
       nutrients: "-",
       portionQuantity: "-",
       portionUnit: "-",
-      goodIngredients: ["raw cane sugar", "cocoa butter"],
-      badIngredients: ["hazelnut paste"]
+      goodIngredients: [],
+      miscellaneousIngredients: ["including caffeine", "sugar"],
+      badIngredients: badIngredients,
+      showWarning: false,
     }
   },
   components: {  },
@@ -230,12 +257,28 @@ export default {
         if(!this.ingredients)
           this.ingredients = product.ingredients_translations.fr;
 
-        console.log("tmp", product.ingredients_translations);
-
+        // console.log("tmp", product.ingredients_translations);
+        var that = this;
         this.$store.dispatch('scanner/translate', { text: this.ingredients })
           .then((result) => {
             this.ingredients = getArrayOfIngredients(result[0][0][0]);
+            
+            var fixes = ["dye", "acidifier"];
+
+            fixes.forEach(function(fix) {
+              var index = this.ingredients.indexOf(fix);
+              if (index > -1) {
+                  this.ingredients.splice(index, 1);
+              }
+            }, this);
+            
+
             this.ingredients = this.ingredients.concat(getArrayOfSymbols(result[0][0][0]));
+            this.ingredients.forEach(function(ing) {
+              console.log(that);
+              if(badIngredients.indexOf(ing) >= 0)
+                that.showWarning = true;
+            });
           });
       }
       else {
