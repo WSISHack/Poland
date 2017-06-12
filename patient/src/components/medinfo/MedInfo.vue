@@ -48,7 +48,7 @@ export default {
   components: {},
   methods: {
     save () {
-      this.$store.dispatch('medInfo/save', this.user);
+      this.$store.dispatch('medInfo/save', this.medInfo);
     }
   }
 }
