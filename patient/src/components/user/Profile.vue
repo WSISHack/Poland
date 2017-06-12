@@ -12,11 +12,28 @@
         <md-input v-model="user.surname"></md-input>
       </md-input-container>
 
-      <md-input-container>
-        <label>Age</label>
-        <md-input v-model="user.age" type="number"></md-input>
-      </md-input-container>
-
+      <!--Age & Height & Weight-->
+      <md-layout md-gutter>
+        <md-layout class="inline">
+          <md-input-container>
+            <label>Age</label>
+            <md-input v-model="user.age" type="number"></md-input>
+          </md-input-container>
+        </md-layout>
+        <md-layout class="inline">
+          <md-input-container>
+            <label>Height (cm)</label>
+            <md-input v-model="user.height" type="number"></md-input>
+          </md-input-container>
+        </md-layout>
+        <md-layout>
+          <md-input-container>
+            <label>Weight (kg)</label>
+            <md-input v-model="user.weight" type="number"></md-input>
+          </md-input-container>
+        </md-layout>
+      </md-layout>
+<!--
       <md-input-container>
         <label>Height (cm)</label>
         <md-input v-model="user.height"></md-input>
@@ -25,7 +42,7 @@
       <md-input-container>
         <label>Weight (kg)</label>
         <md-input v-model="user.weight"></md-input>
-      </md-input-container>
+      </md-input-container>-->
 
       <md-input-container>
         <label>Address</label>
