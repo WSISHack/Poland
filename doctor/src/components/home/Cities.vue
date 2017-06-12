@@ -1,6 +1,6 @@
 <template>
   <div>
-    <search></search>
+    <search-cities></search-cities>
     <div class="phone-viewport">
       <md-list class="md-double-line">
         <md-list-item v-for="city in cities" @click.native="navigate()" class="md-inset">
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import Search from './Search';
+import SearchCities from './SearchCities';
 
 export default {
   name: 'cities',
   created () {
-    this.$store.commit('setTitle', 'Patients')
+    this.$store.commit('setTitle', 'Cities')
   },
   data () {
     return {
@@ -48,7 +48,7 @@ export default {
       this.$router.push({ name: 'city' });
     }
   },
-  components: { Search }
+  components: { SearchCities }
 }
 </script>
 
