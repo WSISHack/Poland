@@ -148,9 +148,10 @@
                           </md-table-row>
                         </md-table-header>
 
+                        <md-table-body>
                           <md-table-row>
                             <md-table-cell>
-                              <p>Apéritiv tonic water</p> <md-icon>pie_chart</md-icon>
+                              <p>Apéritiv tonic water <md-icon style="font-size:22px; color:green;">local_hospital</md-icon> <md-icon style="font-size:22px; color:blue;">people</md-icon></p> 
                               <p><span class="tab-prop-1">0.0g</span> <span class="tab-prop-2">8g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
@@ -159,10 +160,10 @@
                             </md-table-cell>
                           </md-table-row>
 
-                        <md-table-body>
+                        
                           <md-table-row>
                             <md-table-cell>
-                              <p>Orangina: mit fruchtfleisch</p>
+                              <p>Orangina: mit fruchtfleisch <md-icon style="font-size:22px; color:green;">local_hospital</md-icon></p>
                               <p><span class="tab-prop-1">0.1g</span> <span class="tab-prop-2">8.9g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
@@ -173,7 +174,7 @@
 
                           <md-table-row>
                             <md-table-cell>
-                              <p>Gingo: ginger + lemon</p>
+                              <p>Gingo: ginger + lemon <md-icon style="font-size:22px; color:blue;">people</md-icon></p>
                               <p><span class="tab-prop-1">0.0g</span> <span class="tab-prop-2">11.25g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
@@ -198,7 +199,7 @@
 
                           <md-table-row>
                             <md-table-cell>
-                              <p>Alnatura marzipan zarbitter</p>
+                              <p>Alnatura marzipan zarbitter <md-icon style="font-size:22px; color:green;">local_hospital</md-icon> <md-icon style="font-size:22px; color:blue;">people</md-icon></p>
                               <p><span class="tab-prop-1">7.2g</span> <span class="tab-prop-2">49.0g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
@@ -210,7 +211,7 @@
                         <md-table-body>
                           <md-table-row>
                             <md-table-cell>
-                              <p>Alnatura amaranth</p>
+                              <p>Alnatura amaranth <md-icon style="font-size:22px; color:green;">local_hospital</md-icon></p>
                               <p><span class="tab-prop-1">7.7g</span> <span class="tab-prop-2">50.0g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
@@ -221,7 +222,7 @@
 
                           <md-table-row>
                             <md-table-cell>
-                              <p>Balisto muesli goût noisettes raisins biscuit aux céréales</p>
+                              <p>Balisto muesli goût noisettes raisins biscuit aux céréales<md-icon style="font-size:22px; color:blue;">people</md-icon></p>
                               <p><span class="tab-prop-1">6.7g</span> <span class="tab-prop-2">59.8g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
@@ -251,7 +252,7 @@ export default {
   name: 'product',
   created () {
     this.$store.commit('setTitle', 'Product');
-    this.$store.dispatch('scanner/getProducts', [ 54491472])// 5000159461122 ])//this.$route.params.barcode ])
+    this.$store.dispatch('scanner/getProducts', [ this.$route.params.barcode ])
       .then(this.processResult);
   },
   mounted () {
