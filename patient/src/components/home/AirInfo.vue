@@ -2,13 +2,13 @@
   <md-card class="air-info">
     <md-card-content>
       <md-card-media class="icons">
-        <div>
+        <div class="air-info__icon">
           <md-icon class="md-size-2x md-warn red">warning</md-icon>
-          Air Pollution {{pollution}}
+          <p>Air Pollution {{pollution}}</p>
         </div>
-        <div>
+        <div class="air-info__icon">
           <md-icon class="md-size-2x md-primary">bubble_chart</md-icon>
-          Humidity {{humidity}}
+          <p>Humidity {{humidity}}</p>
         </div>
       </md-card-media>
     </md-card-content>
@@ -60,4 +60,12 @@
   .icons div {
     margin: 3px;
   }
+
+  .air-info__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
 </style>

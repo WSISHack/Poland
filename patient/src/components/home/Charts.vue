@@ -126,7 +126,7 @@
   }
 
   .buttons {
-    margin-left:14px; margin-right:14px;
+    margin-left:8px;
   }
 
 </style>
