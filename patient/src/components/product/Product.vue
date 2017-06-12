@@ -242,6 +242,42 @@ export default {
       }
 
       this.nutrients = product.nutrients; 
+      console.log(product);
+      if(product.barcode == 54491472)
+      {
+          this.nutrients.fat = {};
+          this.nutrients.fat.name_translations = {}
+          this.nutrients.fat.name_translations.en = "Fat";
+          this.nutrients.fat.per_hundred = 0;
+
+
+          this.nutrients.saturated_fat = {};  
+          this.nutrients.saturated_fat.name_translations = {}
+          this.nutrients.saturated_fat.name_translations.en = "Saturated fat	";
+          this.nutrients.saturated_fat.per_hundred = 0;
+
+
+          this.nutrients.fiber = {};
+          this.nutrients.fiber.name_translations = {}
+          this.nutrients.fiber.name_translations.en = "Fiber";
+          this.nutrients.fiber.per_hundred = 0;
+
+
+
+          this.nutrients.protein = {};
+          this.nutrients.protein.name_translations = {}
+          this.nutrients.protein.name_translations.en = "Protein";
+          this.nutrients.protein.per_hundred = 0;
+
+          
+          this.nutrients.salt = {};
+          this.nutrients.salt.name_translations = {}
+          this.nutrients.salt.name_translations.en = "Salt";
+          this.nutrients.salt.per_hundred = 0;
+          
+          
+      }
+
       this.portionQuantity = product.portion_quantity; 
       this.portionUnit = product.portion_unit ;
 
