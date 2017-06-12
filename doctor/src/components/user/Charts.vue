@@ -3,7 +3,10 @@
     <md-card class="chart">
       <md-card-header>
         <md-card-header-text>
-          <div class="md-title">Macros</div>
+          <div class="md-title">
+            <md-icon class="md-size-2x md-primary">device_hub</md-icon>
+            Macros
+          </div>
         </md-card-header-text>
       </md-card-header>
       <md-card-content
@@ -13,7 +16,10 @@
     <md-card class="chart">
       <md-card-header>
         <md-card-header-text>
-          <div class="md-title">Measurement</div>
+          <div class="md-title">
+            <md-icon class="md-size-2x md-primary">timer</md-icon>
+            Measurement
+          </div>
         </md-card-header-text>
       </md-card-header>
       <md-card-content
@@ -23,7 +29,10 @@
     <md-card class="chart">
       <md-card-header>
         <md-card-header-text>
-          <div class="md-title">Air</div>
+          <div class="md-title">
+            <md-icon class="md-size-2x md-primary">wb_cloudy</md-icon>
+            Air
+          </div>
         </md-card-header-text>
       </md-card-header>
       <md-card-content
