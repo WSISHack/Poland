@@ -136,7 +136,7 @@
                     <span class="md-caption tab-prop-3">Fat</span>
                   </md-layout>
 
-                      <md-table>
+                      <md-table v-if="product.barcode == 54491472">
                         <md-table-header>
                           <md-table-row>
                             <md-table-head>
@@ -150,12 +150,12 @@
 
                           <md-table-row>
                             <md-table-cell>
-                              <p>Apéritiv tonic water</p>
-                              <p><span class="tab-prop-1">0g</span> <span class="tab-prop-2">8g</span></p>
+                              <p>Apéritiv tonic water</p> <md-icon>pie_chart</md-icon>
+                              <p><span class="tab-prop-1">0.0g</span> <span class="tab-prop-2">8g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>32</p>
-                              <p class="tab-prop-3">0g</p>
+                              <p class="tab-prop-3">0.0g</p>
                             </md-table-cell>
                           </md-table-row>
 
@@ -167,18 +167,66 @@
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>39</p>
-                              <p class="tab-prop-3">0g</p>
+                              <p class="tab-prop-3">0.0g</p>
                             </md-table-cell>
                           </md-table-row>
 
                           <md-table-row>
                             <md-table-cell>
                               <p>Gingo: ginger + lemon</p>
-                              <p><span class="tab-prop-1">0g</span> <span class="tab-prop-2">11.25g</span></p>
+                              <p><span class="tab-prop-1">0.0g</span> <span class="tab-prop-2">11.25g</span></p>
                             </md-table-cell>
                             <md-table-cell md-numeric>
                               <p>110</p>
-                              <p class="tab-prop-3">0g</p>
+                              <p class="tab-prop-3">0.0g</p>
+                            </md-table-cell>
+                          </md-table-row>
+                        </md-table-body>
+                      </md-table>
+
+                      <md-table v-if="product.barcode == 5000159461122">
+                        <md-table-header>
+                          <md-table-row>
+                            <md-table-head>
+                              Product
+                            </md-table-head>
+                            <md-table-head md-numeric>
+                              Calories (g)
+                            </md-table-head>
+                          </md-table-row>
+                        </md-table-header>
+
+                          <md-table-row>
+                            <md-table-cell>
+                              <p>Alnatura marzipan zarbitter</p>
+                              <p><span class="tab-prop-1">7.2g</span> <span class="tab-prop-2">49.0g</span></p>
+                            </md-table-cell>
+                            <md-table-cell md-numeric>
+                              <p>490</p>
+                              <p class="tab-prop-3">28.0g</p>
+                            </md-table-cell>
+                          </md-table-row>
+
+                        <md-table-body>
+                          <md-table-row>
+                            <md-table-cell>
+                              <p>Alnatura amaranth</p>
+                              <p><span class="tab-prop-1">7.7g</span> <span class="tab-prop-2">50.0g</span></p>
+                            </md-table-cell>
+                            <md-table-cell md-numeric>
+                              <p>484</p>
+                              <p class="tab-prop-3">26.0g</p>
+                            </md-table-cell>
+                          </md-table-row>
+
+                          <md-table-row>
+                            <md-table-cell>
+                              <p>Balisto muesli goût noisettes raisins biscuit aux céréales</p>
+                              <p><span class="tab-prop-1">6.7g</span> <span class="tab-prop-2">59.8g</span></p>
+                            </md-table-cell>
+                            <md-table-cell md-numeric>
+                              <p>508</p>
+                              <p class="tab-prop-3">26.1g</p>
                             </md-table-cell>
                           </md-table-row>
                         </md-table-body>
@@ -197,13 +245,13 @@
 import getArrayOfIngredients from './../../store/scanner/getArrayOfIngredients'
 import getArrayOfSymbols from './../../store/scanner/getArrayOfSymbols'
 
-const badIngredients = ["E 338", "E 150d"];
+const badIngredients = ["E 338", "E 150d", "emulsifier", "palm fat"];
 
 export default {
   name: 'product',
   created () {
     this.$store.commit('setTitle', 'Product');
-    this.$store.dispatch('scanner/getProducts', [ 54491472 ])//this.$route.params.barcode ])
+    this.$store.dispatch('scanner/getProducts', [ 54491472])// 5000159461122 ])//this.$route.params.barcode ])
       .then(this.processResult);
   },
   mounted () {
@@ -216,8 +264,9 @@ export default {
       nutrients: "-",
       portionQuantity: "-",
       portionUnit: "-",
-      goodIngredients: [],
-      miscellaneousIngredients: ["including caffeine", "sugar"],
+      product: null,
+      goodIngredients: ["whey powder", "cocoa butter", "water"],
+      miscellaneousIngredients: ["including caffeine", "sugar", "salt", "glucose syrup", "peanuts", "lactose"],
       badIngredients: badIngredients,
       showWarning: false,
     }
@@ -240,6 +289,8 @@ export default {
         this.$router.push({ name: 'scanner' });
         return;
       }
+
+      this.product = product;
 
       this.nutrients = product.nutrients; 
       console.log(product);
