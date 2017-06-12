@@ -83,14 +83,10 @@
           </div>
         </div>
       </div>
-      <div style="max-height: 130px; min-height: 64px; overflow-y: scroll;">
-        <md-list>
-          <md-list-item v-for="(disease, id) in getDiseases()" :key="id" @click.native="addDisease(disease)">
-            <span>{{ disease }}</span>
-            <md-ink-ripple />
-          </md-list-item>
-        </md-list>
-      </div>
+      <label class="label" id="diseaseLabel">Select your diseases</label>      
+      <md-select class="select" name="staticDisease" id="staticDisease" v-model="static.disease">
+        <md-option v-for="(disease, id) in getDiseases()" :key="id" @click.native="addDisease(disease)" value="disease">{{disease}}</md-option>
+      </md-select>
 
       <!--Allergens-->
       <div class="md-theme-default label">
@@ -109,14 +105,10 @@
           </div>
         </div>
       </div>
-      <div style="max-height: 130px; min-height: 64px; overflow-y: scroll; left: 0px;">
-        <md-list>
-          <md-list-item v-for="(allergen, id) in getAllergens()" :key="id" @click.native="addAllergen(allergen)">
-            <span>{{ allergen }}</span>
-            <md-ink-ripple />
-          </md-list-item>
-        </md-list>
-      </div>
+      <label class="label" id="allergenLabel">Select your allergens</label>      
+      <md-select class="select" name="staticAllergens" id="staticAllergens" v-model="static.allergen">
+        <md-option v-for="(allergen, id) in getAllergens()" :key="id" @click.native="addAllergen(allergen)" value="allergen">{{allergen}}</md-option>
+      </md-select>
 
       <!--Sex-->
       <md-list>
@@ -150,6 +142,9 @@ export default {
   computed: {
     user() {
       return this.$store.getters['user/profile/user'];
+    },
+    static() {
+      return this.$store.getters['user/profile/static'];
     }
   },
   components: {  },
@@ -176,7 +171,7 @@ export default {
     },
     getAllergens() {
       return this.$store.getters['user/profile/allergens'];
-    },
+    }
   }
 }
 </script>
@@ -209,8 +204,8 @@ export default {
     min-height: 0px;
     margin: 0;
   }
-  body > div.md-menu-content.md-select-content.md-theme-default.md-size-0.md-direction-bottom-right.md-active {
-    left: 0px !important;
+  .select {
+    margin-top: -38px;
   }
 
 </style>

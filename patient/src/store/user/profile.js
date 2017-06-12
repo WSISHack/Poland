@@ -3,6 +3,10 @@ import firebase from 'firebase'
 const profile = {
   namespaced: true,
   state: {
+      static: {
+        disease: "",
+        allergen: "",
+      },
       diseases: [
         "Iron-deficiency anaemia",
         "Protein-energy malnutrition",
@@ -55,6 +59,7 @@ const profile = {
       let id = state.diseases.indexOf(value);
       state.diseases.splice(id, 1);
       state.user.diseases.push(value);
+      state.static.disease = "";
     },
     removeDisease (state, value) {
       let id = state.user.diseases.indexOf(value);
@@ -65,6 +70,7 @@ const profile = {
       let id = state.allergens.indexOf(value);
       state.allergens.splice(id, 1);
       state.user.allergens.push(value);
+      state.static.allergen = "";
     },
     removeAllergen (state, value) {
       let id = state.user.allergens.indexOf(value);
@@ -108,6 +114,9 @@ const profile = {
     },
     allergens: (state, getters) => {
       return state.allergens;
+    },
+    static: (state, getters) => {
+      return state.static;
     }
   }
 }
