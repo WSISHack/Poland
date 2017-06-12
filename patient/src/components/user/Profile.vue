@@ -119,7 +119,7 @@
       </div>
 
       <!--Sex-->
-      <md-list>
+      <div>
         <label class="label">Sex</label>
         <md-radio v-model="user.sex" id="my-test2" name="my-test-group1" md-value="2" class="md-primary">
           Female
@@ -127,7 +127,7 @@
         <md-radio v-model="user.sex" id="my-test3" name="my-test-group1" md-value="3"class="md-primary">
           Male
         </md-radio>
-      </md-list>
+      </div>
 
       <!--Save button-->
       <md-layout md-align="end">
