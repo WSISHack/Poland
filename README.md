@@ -1,3 +1,5 @@
+
+
 # Poland
 Repostitory for team Poland!
 
@@ -26,6 +28,8 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+Then open [http://localhost:8080/](http://localhost:8080/) to see your patient app, and [http://localhost:3000/](http://localhost:3000/) for doctor app.
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
