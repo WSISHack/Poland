@@ -7,16 +7,13 @@
 
       <md-button-toggle md-single class="md-primary">
         <md-layout><md-button class="buttons" @click.native="setChart('macros')">
-          <md-icon class="md-primary">device_hub</md-icon>
-          Macros
+          <md-icon class="md-primary icon">device_hub</md-icon>
         </md-button></md-layout>
         <md-layout><md-button class="buttons" @click.native="setChart('measurement')">
-          <md-icon class="md-primary">timer</md-icon>
-          Measurement
+          <md-icon class="md-primary icon ">timer</md-icon>
         </md-button></md-layout>
         <md-layout><md-button class="buttons" @click.native="setChart('air')">
-          <md-icon class="md-primary">wb_cloudy</md-icon>
-          Air
+          <md-icon class="md-primary icon">wb_cloudy</md-icon>
         </md-button></md-layout>
       </md-button-toggle>
 
@@ -129,8 +126,7 @@
   }
 
   .buttons {
-    margin-left:4px; margin-right:4px;
+    margin-left:14px; margin-right:14px;
   }
 
-  
 </style>
